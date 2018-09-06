@@ -1,0 +1,65 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+
+    <form method='GET' action='/category/{{ view.kwargs.name }}' class="media search-section mt-2 mb-2" >
+      <input class="form-control" type='text' name='q' placeholder='Search posts for this category...' value='{{ request.GET.q }}'>
+      <button type="submit" class="btn btn-primary ml-2">Search</button>
+    </form>
+    <div class="alert alert-success align-self-center" role="alert">
+      <h4><strong>{{ category }}</strong></h4>
+      <small class="text-muted"> - Number of posts: {{ page_obj.paginator.count }}</small>
+    </div>
+
+  {% for post in posts %}
+
+      <article class="shadow-sm media content-section">
+        <div class="row media-body">
+            <div class="col-md-3 col-sm-3 col-3 align-self-center">
+          <img class="rounded-circle article-img align-middle mx-auto d-none d-sm-block " src="{{ post.author.profile.image.square }}">
+          <img class="rounded-circle article-img-sm align-middle mx-auto d-block d-sm-none " src="{{ post.author.profile.image.square }}">
+            </div>
+            <div class="col-md-9 col-sm-9 col-9">
+              <div class="article-metadata">
+                <strong><a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a></strong>
+                <small class="text-muted"><a href="{% url 'category-name' post.category.name %}"># {{ post.category.name }}</a> | {{ post.date_posted|date:"F d, Y" }}</small>
+              </div>
+              <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
+            </div>
+        <div class="row media-body pt-1">
+          <div class="summer-img-class col-md-12">
+            {% if post.image %}
+
+              <a href="{{ post.image.full  }}"><img alt="" src="{{ post.image.full }}" class="post_image_thumbnail rounded mb-2 mx-auto d-block"/></a>
+
+            {% endif %}
+            <p class="article-content ml-3">{{ post.content|safe|truncatechars_html:150 }}</p>
+
+          </div>
+        </div>
+        </div>
+      </article>
+  {% endfor %}
+  {% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+      <a class="btn btn-outline-info mb-4" href="?page=1&q={{ request.GET.q }}">First</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}&q={{ request.GET.q }}">Previous</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+        <a class="btn btn-info mb-4" href="?page={{ num }}&q={{ request.GET.q }}">{{ num }}</a>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ num }}&q={{ request.GET.q }}">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}&q={{ request.GET.q }}">Next</a>
+      <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}&q={{ request.GET.q }}">Last</a>
+    {% endif %}
+
+  {% endif %}
+{% endblock content %}
+

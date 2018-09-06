@@ -1,0 +1,16 @@
+<h3>You can find within:</h3>
+<p class='text-muted'>Categories:
+  <ul class="list-group">
+
+    {% for obj in category_list %}
+      <a href="{% url 'category-name' obj.name %}"><li class="list-group-item list-group-item-light">{{ obj.name }}</li></a>
+    {% endfor %}
+  </ul>
+</p>
+<p class='text-muted'>Contact Us:
+    <ul class="list-group">
+
+    </ul>
+
+</p>
+

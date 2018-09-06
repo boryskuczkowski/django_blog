@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block mt %} mt-2 {% endblock mt %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section-form">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Blog Post</legend>
+                {{ form|crispy }}
+                {% if form.image.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.image.errors }}
+                    </div>
+                {% endif %}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Post</button>
+            </div>
+        </form>
+        {% block summernote %}
+            {{ form.media }}
+        {% endblock summernote %}
+
+    </div>
+{% endblock content %}

@@ -1,0 +1,230 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  padding-top: 5rem !important;
+}
+
+a {
+    color: #3193c4;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+.btn-primary {
+    color: #3193c4 !important;
+    background-color: #fff !important;
+    border-color: #3193c4 !important;
+}
+.btn-primary:focus {
+    color: #fff!important;
+    background-color: #3193c4!important;
+    border-color: #3193c4 !important;
+}
+
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+.search-section {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.sticky-top{
+  top: 5em;
+}
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+
+.article-img-sm {
+  height: 55px;
+  width: 55px;
+  object-fit: cover;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px !important;
+  height: 25px !important;
+  vertical-align: middle !important;
+}
+
+.account-img {
+  height: 125px !important;
+  width: 125px !important;
+  margin-right: 20px !important;
+  margin-bottom: 16px !important;
+  object-fit: cover !important;
+}
+.account-img-small {
+  height: 75px !important;
+  width: 75px !important;
+  margin-right: 15px !important;
+  margin-bottom: 15px !important;
+  object-fit: cover !important;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.post_image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 1px 1px 1px rgba(117, 169, 215, 0.25);
+}
+
+.post_image_thumbnail {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  box-shadow: 1px 1px 1px rgba(117, 169, 215, 0.25);
+}
+
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+
+  -ms-word-break: break-all !important;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all !important;
+  /* Instead use this non-standard one: */
+  word-break: break-word !important;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto !important;
+  -moz-hyphens: auto !important;
+  -webkit-hyphens: auto !important;
+  hyphens: auto !important;
+
+}
+
+.bg-steel{
+  background-image: linear-gradient(-90deg, #498088, #6d728d);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+
+.media-body > div > p > img, .summer-img-class  blockquote > p > img, .media-body > p > img,  .media-body > div > blockquote > p > img, .note-editable > p > img {
+  display: block !important;
+  width: 100% !important;
+  max-height: none;
+  object-fit: cover !important;
+  margin: auto !important;
+  border-radius: .25rem!important;
+  box-shadow: 1px 1px 1px rgba(117, 169, 215, 0.25);
+}
+
+.summer-img-class  > p > img, .note-editable > p > img {
+  display: block !important;
+  width: 100% !important;
+  max-height: 350px !important;
+  object-fit: cover !important;
+  margin: auto !important;
+  border-radius: .25rem!important;
+  box-shadow: 1px 1px 1px rgba(117, 169, 215, 0.25);
+}
+
+
+iframe{
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+.media-body {
+    padding: 2px;
+}
+
+.content-section-form{
+  background: #ffffff;
+  padding: 10px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.bg-info {
+  background-color: #7495cc!important;
+  border-radius: .25rem!important;
+}
+
+.page-item.disabled, .page-link {
+  border-radius: .25rem!important;
+}
+
+.text-info {
+  color: #7495cc!important;
+}
+.btn-link {
+  font-weight: 400;
+  color: #3193c4;
+  background-color: transparent;
+}
+.is-scrolling {
+
+  opacity: 0.6;
+     -moz-transition: opacity 0.3s ease-out;
+       -o-transition: opacity 0.3s ease-out;
+  -webkit-transition: opacity 0.3s ease-out;
+          transition: opacity 0.3s ease-out;
+}

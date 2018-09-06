@@ -1,0 +1,8 @@
+local_settings.py
+staticfiles
+.env
+django_venv
+*.dump
+*.pyc
+*.sql
+*.sqlite3
