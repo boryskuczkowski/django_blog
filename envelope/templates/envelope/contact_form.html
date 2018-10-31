@@ -1,0 +1,20 @@
+{% load envelope_tags crispy_forms_tags %}
+{% load i18n %}
+{% load envelope_tags %}
+{% load crispy_forms_tags %}
+<form action="{% url 'envelope-contact' %}" method="post">
+{% csrf_token %}
+{% antispam_fields %}
+<fieldset>
+    <table>
+    <tbody>
+    {{ e_form|crispy }}
+    </tbody>
+    <tfoot>
+        <tr>
+              <button class="btn btn-outline-info" type="submit" value="{% trans "Send!" %}" >Contact Us</button>
+        </tr>
+    </tfoot>
+    </table>
+</fieldset>
+</form>

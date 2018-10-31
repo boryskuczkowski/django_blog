@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'category.apps.CategoryConfig',
+    'envelope.apps.EnvelopeConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'category.sidebar_category.category_list',
+                'envelope.sidebar_envelope.foo',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -133,7 +135,6 @@ USE_TZ = True
 #     os.path.join(BASE_DIR, 'static')
 # ]
 
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -149,18 +150,14 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-DEFAULT_FROM_EMAIL = "Helpdesk <helpdesk@yourdomain>"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 SUMMERNOTE_THEME = 'bs4'
 
 
 SUMMERNOTE_CONFIG = {
-    # Using SummernoteWidget - iframe mode, default
 
-
-    # Or, you can set it as False to use SummernoteInplaceWidget by default - no iframe mode
-    # In this case, you have to load Bootstrap/jQuery stuff by manually.
-    # Use this when you're already using Bootstraip/jQuery based themes.
     'iframe': True,
     'attachment_filesize_limit': 2000 * 2000 * 10,  # default 1024*1024
     # You can put custom Summernote settings
@@ -233,8 +230,8 @@ STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# MEDIAFILES_LOCATION = 'media'
+# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 AWS_DEFAULT_ACL = None
 try:

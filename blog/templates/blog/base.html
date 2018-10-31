@@ -1,4 +1,6 @@
 {% load static %}
+{% load envelope_tags %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,11 +94,16 @@
           {% block content %}{% endblock %}
         </div>
         <div class="col-md-3 mt-2">
-          <div class="content-section sticky-top">
+
             {% block sidebar %}
+              <div class="content-section">
               {% include "category/sidebar_category.html" %}
+              </div>
+              <div class="content-section">
+              {% include "envelope/contact.html" %}
+              </div>
             {% endblock sidebar %}
-          </div>
+
         </div>
       </div>
     </main>

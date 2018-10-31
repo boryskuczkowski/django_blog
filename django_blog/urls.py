@@ -23,6 +23,7 @@ from users import views as user_views
 from category.views import PostCategoryView
 from category.models import Category
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
@@ -54,8 +55,8 @@ urlpatterns = [
     path('comment/', include('comment.urls')),
     path('api/', include('comment.api.urls')),  # for API Framework
     path('category/<str:name>/', PostCategoryView.as_view(), name='category-name'),
-
+    path('contact', include('envelope.urls')),
 ]
 
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

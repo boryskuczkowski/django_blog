@@ -1,0 +1,10 @@
+
+def check_honeypot(request, form):
+    """
+    Make sure that the hidden form field is empty, using django-honeypot.
+    """
+    try:
+        from honeypot.decorators import verify_honeypot_value
+        return verify_honeypot_value(request, '') is None
+    except ImportError:  # pragma: no cover
+        return True

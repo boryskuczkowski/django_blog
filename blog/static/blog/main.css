@@ -121,7 +121,7 @@ a.article-title:hover {
 
 .post_image {
   width: 100%;
-  height: auto;
+  max-height: 550px;
   object-fit: cover;
   box-shadow: 1px 1px 1px rgba(117, 169, 215, 0.25);
 }
@@ -167,7 +167,7 @@ a.article-title:hover {
 .media-body > div > p > img, .summer-img-class  blockquote > p > img, .media-body > p > img,  .media-body > div > blockquote > p > img, .note-editable > p > img {
   display: block !important;
   width: 100% !important;
-  max-height: none;
+  max-height: 550px;
   object-fit: cover !important;
   margin: auto !important;
   border-radius: .25rem!important;
@@ -219,6 +219,12 @@ iframe{
   font-weight: 400;
   color: #3193c4;
   background-color: transparent;
+}
+.btn-outline-info {
+    color: #17a2b8;
+    background-color: transparent;
+    background-image: none;
+    border-color: #17a2b8;
 }
 .is-scrolling {
 
