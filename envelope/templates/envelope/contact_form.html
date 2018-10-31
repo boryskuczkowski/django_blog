@@ -2,6 +2,7 @@
 {% load i18n %}
 {% load envelope_tags %}
 {% load crispy_forms_tags %}
+<h3>Contact us</h3>
 <form action="{% url 'envelope-contact' %}" method="post">
 {% csrf_token %}
 {% antispam_fields %}
