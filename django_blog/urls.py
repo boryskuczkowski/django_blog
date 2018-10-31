@@ -62,5 +62,6 @@ urlpatterns = [
 try:
     from .local_settings import *
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 except ImportError:
     pass

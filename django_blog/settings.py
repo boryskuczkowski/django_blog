@@ -13,7 +13,7 @@ print(BASE_DIR)
 SECRET_KEY = os.environ.get('SECRET_KEY_DJANGO')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['nameless-castle-62627.herokuapp.com']
 
@@ -229,9 +229,11 @@ AWS_S3_OBJECT_PARAMETERS = {
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+if DEBUG == False:
+    MEDIAFILES_LOCATION = 'media'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+else:
+    pass
 
 AWS_DEFAULT_ACL = None
 try:
