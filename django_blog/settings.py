@@ -13,7 +13,7 @@ print(BASE_DIR)
 SECRET_KEY = os.environ.get('SECRET_KEY_DJANGO')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['nameless-castle-62627.herokuapp.com']
 
@@ -148,7 +148,8 @@ SUMMERNOTE_THEME = 'bs4'
 SUMMERNOTE_CONFIG = {
 
     'iframe': True,
-    'attachment_filesize_limit': 2000 * 2000 * 10,  # default 1024*1024
+    # Set custom storage class for attachments.
+    'attachment_filesize_limit': 1600 * 1600 * 10,  # default 1024*1024
     # You can put custom Summernote settings
     'summernote': {
         # As an example, using Summernote Air-mode
@@ -183,7 +184,6 @@ SUMMERNOTE_CONFIG = {
 
         ],
     },
-
 }
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
