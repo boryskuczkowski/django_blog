@@ -7,8 +7,7 @@
       <button type="submit" class="btn btn-primary ml-2">Search</button>
     </form>
     <div class="alert alert-success align-self-center" role="alert">
-      <h4><strong>{{ category }}</strong></h4>
-      <small class="text-muted"> - Number of posts: {{ page_obj.paginator.count }}</small>
+      <small class="text-muted"><strong>{{ category|capfirst }}</strong>, posts: {{ page_obj.paginator.count }}</small>
     </div>
 
   {% for post in posts %}

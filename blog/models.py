@@ -23,7 +23,7 @@ class Post(models.Model):
   category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False, blank=False)
   image = ImageField(upload_to='post_pics',
                      auto_add_fields=True, blank=True,
-                     verbose_name=" Main Image / Thumbnail",)
+                     verbose_name="Main Image / Thumbnail",)
 
   def __str__(self):
     return self.title

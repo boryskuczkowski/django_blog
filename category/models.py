@@ -14,4 +14,4 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category-name', kwargs={'pk': self.pk})
+        return reverse('category-name', kwargs={'name': self.name})

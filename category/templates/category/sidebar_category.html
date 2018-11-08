@@ -3,6 +3,6 @@
   <ul class="list-group">
 
     {% for obj in category_list %}
-      <a href="{% url 'category-name' obj.name %}"><li class="list-group-item list-group-item-light">{{ obj.name }}</li></a>
+      <a href="{% url 'category-name' obj.name %}"><li class="list-group-item list-group-item-light">{{ obj.name|capfirst }}</li></a>
     {% endfor %}
   </ul>

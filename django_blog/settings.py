@@ -225,6 +225,7 @@ else:
     pass
 
 AWS_DEFAULT_ACL = None
+
 try:
     from .local_settings import *
 except ImportError:
